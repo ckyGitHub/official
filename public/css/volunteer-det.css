@@ -1,0 +1,28 @@
+.page-vol-det .article {
+	padding: 0 0.24rem;
+}
+.page-vol-det .person {
+	text-align: center;
+}
+.page-vol-det .person p {
+	margin-top: 0.4rem;
+	font-size: 14px;
+	color: #808080;
+}
+.page-vol-det .name {
+	font-size: 18px;
+	color: #333;
+}
+.page-vol-det .age {
+	color: #333;
+}
+.page-vol-det .person img {
+	margin-top: 0.6rem;
+	width: 60%;
+}
+.page-vol-det .content p {
+	margin-top: 0.5rem;
+	color: #666;
+	font-size: 14px;
+	line-height: 28px;
+}

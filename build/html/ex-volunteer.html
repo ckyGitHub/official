@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en" class="page-vol">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<title>武汉云智互联科技有限公司官网</title>
+
+	<script src="http://cloudliving-img.b0.upaiyun.com/static/Home/ow_mobile/lib/flexible.js"></script>
+	<link rel="stylesheet" href="http://cloudliving-img.b0.upaiyun.com/static/Home/ow_mobile/lib/frozen.min.css">
+	<link rel="stylesheet" href="http://cloudliving-img.b0.upaiyun.com/static/Home/ow_mobile/css/ow_mobile.min.css">
+
+</head>
+<body>
+	
+	<div class="g-wrapper">
+
+		<!-- 遮罩层 -->
+		<div class="g-cover"></div>
+
+		<!-- 左边菜单栏 -->
+		<div class="g-left-nav" data-show="0">
+			<div class="m-menu">
+				<ul class="menu">
+					<li class="ui-border-b"><a href="index.html">首页</a></li>
+					<li class="ui-border-b"><a href="project.html">项目</a></li>
+					<li class="ui-border-b"><a href="about.html">关于</a></li>
+					<li class="ui-border-b"><a href="news.html">新闻</a></li>
+					<li class="ui-border-b menu-active"><a href="#">案例</a>
+						<ul>
+							<li><a href="ex-community.html">云生活志愿服务站</a></li>
+							<li><a href="ex-city.html">荆门云生活</a></li>
+							<li><a href="ex-volunteer.html">志愿者网络评选</a></li>
+						</ul>
+					</li>
+				</ul>
+			</div>
+		</div>
+
+		<!-- 主页面 -->
+		<div class="g-content">
+			<div class="g-head">
+				<div class="u-show-hide-btn">
+					<img src="http://cloudliving-img.b0.upaiyun.com/static/Home/ow_mobile/images/nav-icon.png">
+				</div>
+				<p>志愿者网络评选</p>
+			</div>
+			<div class="video">
+				<a href="">
+					<img src="http://cloudliving-img.b0.upaiyun.com/static/Home/ow_mobile/images/video.png">
+				</a>
+				<div class="text">
+					<p>武汉首届最美志愿者网络评选大赛、给全市人民留下了个既美好又震撼的回忆大赛网聚武汉百余志愿组织的优秀代表,百万市民被他们的志愿故事打动，加入到这场武汉人自己的爱心盛会中来。</p>
+					<p>今年，第二届评选将在10月拉开帷幕届时将会有全新的评选规则、更精彩的志愿者故事今年也一起期待吧！</p>
+				</div>
+			</div>
+			<div class="about">
+				<div class="title">
+					<p>ABOUT<span>01</span></p>
+				</div>
+				<div class="detail">
+					<p><span>活动时间：</span>2015年10月—12月</p>
+					<p><span>参选人数：</span>2000名报名者，181名进入投票阶段</p>
+					<p><span>投票数：</span>2718909</p>
+					<p><span>活动内容：</span>各社区、各志愿组织推选优秀志愿者，云生活平台公开投票，票数前十名获评十佳最美志愿者称号。武汉市委宣传部副部长等领导出席颁奖典礼，长江日报、武汉电视一套、六套、新浪、网易、搜狐等各大媒体进行了报道。</p>
+				</div>
+			</div>
+			<div class="about">
+				<div class="title">
+					<p>ABOUT<span>02</span></p>
+				</div>
+				<div class="volunteer clearfix">
+					<!-- <div class="item">
+						<img src="http://cloudliving-img.b0.upaiyun.com/static/Home/ow_mobile/images/best/volunteer1.png">
+						<div class="info">
+							<p>
+								<span class="name">胡龙丹</span>
+								<span class="age">35岁</span>
+							</p>
+							<p>武汉地铁志愿者服务总队</p>
+							<p>志愿宣言：志愿者就像蒲公英，播散文明的种子</p>
+						</div>
+					</div> -->
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="g-bottom ui-border-t">
+		COPYRIGHT(©) 2016 武汉云智互联 版权所有
+	</div>
+
+	<script src="http://cloudliving-img.b0.upaiyun.com/static/Home/ow_mobile/lib/zepto.min.js"></script>
+	<script src="http://cloudliving-img.b0.upaiyun.com/static/Home/ow_mobile/lib/frozen.min.js"></script>
+	<script src="http://cloudliving-img.b0.upaiyun.com/static/Home/ow_mobile/js/leftnav.js"></script>
+	<script src="http://cloudliving-img.b0.upaiyun.com/static/Home/ow_mobile/lib/extend.js"></script>
+	<script src="http://cloudliving-img.b0.upaiyun.com/static/Home/ow_mobile/js/volunteer.js"></script>
+	<script>
+		(function(){
+			var template = '<!-- data-repeat -->'+
+							'<a class="item" data-repeat="x in datas">'+
+								'<img src="x.smallImg">'+
+								'<div class="info">'+
+									'<p>'+
+										'<span class="name">x.name</span>'+
+										'<span class="age">x.age岁</span>'+
+									'</p>'+
+									'<p>x.organization</p>'+
+									'<p>x.slogan</p>'+
+								'</div>'+
+							'</a>'+
+							'<!-- end data-repeat -->';
+			var s = template.format({datas:data});
+			$('.volunteer').append(s);
+
+			$('.volunteer .item').click(function(){
+				var index = $(this).index();
+				location.href = "volunteer-det.html?id="+index;
+			});
+		})()
+	</script>
+</body>
+</html>

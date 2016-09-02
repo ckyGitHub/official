@@ -1,0 +1,21 @@
+.page-line .line {
+	padding: 0 0.24rem;
+}
+.page-line .title {
+	padding: 0.4rem 0;
+	text-align: center;
+	font-size: 18px;
+	color: #333;
+}
+.page-line .item {
+	padding-bottom: 0.2rem
+}
+.page-line .item p:nth-child(1) {
+	padding: 0.4rem 0;
+	color: #333;
+}
+.page-line .item p:nth-child(2) {
+	font-size: 14px;
+	color: #666;
+	line-height: 28px;
+}

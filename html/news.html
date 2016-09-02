@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en" class="page-news">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<title>武汉云智互联科技有限公司官网</title>
+
+	<script src="../public/lib/flexible.js"></script>
+	<link rel="stylesheet" href="../public/lib/frozen.min.css">
+	<!-- build:css -->
+	<link rel="stylesheet" href="../public/css/common.css">
+	<link rel="stylesheet" href="../public/css/news.css">
+	<!-- endbuild -->
+</head>
+<body>
+	
+	<div class="g-wrapper">
+
+		<!-- 遮罩层 -->
+		<div class="g-cover"></div>
+
+		<!-- 左边菜单栏 -->
+		<div class="g-left-nav" data-show="0">
+			<div class="m-menu">
+				<ul class="menu">
+					<li class="ui-border-b"><a href="index.html">首页</a></li>
+					<li class="ui-border-b"><a href="project.html">项目</a></li>
+					<li class="ui-border-b"><a href="about.html">关于</a></li>
+					<li class="ui-border-b menu-active"><a href="news.html">新闻</a></li>
+					<li class="ui-border-b"><a href="#">案例</a>
+						<ul>
+							<li><a href="ex-community.html">云生活志愿服务站</a></li>
+							<li><a href="ex-city.html">荆门云生活</a></li>
+							<li><a href="ex-volunteer.html">志愿者网络评选</a></li>
+						</ul>
+					</li>
+				</ul>
+			</div>
+		</div>
+
+		<!-- 主页面 -->
+		<div class="g-content">
+			<div class="g-head">
+				<div class="u-show-hide-btn">
+					<img src="../public/images/nav-icon.png">
+				</div>
+				<p>新闻</p>
+			</div>
+			<div class="newslist">
+				<!-- <a class="item ui-border-b">
+					<div class="show">
+						<img src="../public/images/news.png">
+					</div>
+					<div class="brief">
+						<p>中国首页互联网+城市战略联盟</p>
+						<p>2016.08.31</p>
+						<p>中国首页互联网+城市战略联盟中国首页互联网+城市战略联盟中国首页互联网+城市战略联盟</p>
+					</div>
+				</a> -->
+			</div>
+		</div>
+	</div>
+	<div class="g-bottom ui-border-t">
+		COPYRIGHT(©) 2016 武汉云智互联 版权所有
+	</div>
+
+	<script src="../public/lib/zepto.min.js"></script>
+	<script src="../public/lib/frozen.min.js"></script>
+	<script src="../public/js/leftnav.js"></script>
+	<script src="../public/lib/extend.js"></script>
+	<script>
+		(function(){
+			$.get("http://tw.cloudliving.net/official_website.php?c=Index&a=news&action=news_list",function(data){
+				if(data.Code != 0){$.tips({content: data.errorMessage + '请刷新重试'});return};
+				var s = '<!-- data-repeat -->'+
+					'<a class="item ui-border-b" data-repeat="x in result" href="news-det.html?id=x.id">'+
+							'<div class="show">'+
+								'<img src="x.news_image">'+
+							'</div>'+
+							'<div class="brief">'+
+								'<p>x.news_title</p>'+
+								'<p>x.year'+'-x.month_day</p>'+
+								'<p>x.news_brief</p>'+
+							'</div>'+
+						'</a>'+
+					'<!-- end data-repeat -->'; 
+
+				s = s.format(data);
+				$('.newslist').append(s);
+			});
+		})();
+	</script>
+</body>
+</html>

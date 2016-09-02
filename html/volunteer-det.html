@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en" class="page-vol-det">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<title>武汉云智互联科技有限公司官网</title>
+
+	<script src="../public/lib/flexible.js"></script>
+	<link rel="stylesheet" href="../public/lib/frozen.min.css">
+	<!-- build:css -->
+	<link rel="stylesheet" href="../public/css/common.css">
+	<link rel="stylesheet" href="../public/css/volunteer-det.css">
+	<!-- endbuild -->
+</head>
+<body>
+	
+	<div class="g-wrapper">
+
+		<!-- 遮罩层 -->
+		<div class="g-cover"></div>
+
+		<!-- 左边菜单栏 -->
+		<div class="g-left-nav" data-show="0">
+			<div class="m-menu">
+				<ul class="menu">
+					<li class="ui-border-b"><a href="index.html">首页</a></li>
+					<li class="ui-border-b"><a href="project.html">项目</a></li>
+					<li class="ui-border-b"><a href="about.html">关于</a></li>
+					<li class="ui-border-b"><a href="news.html">新闻</a></li>
+					<li class="ui-border-b menu-active"><a href="#">案例</a>
+						<ul>
+							<li><a href="ex-community.html">云生活志愿服务站</a></li>
+							<li><a href="ex-city.html">荆门云生活</a></li>
+							<li><a href="ex-volunteer.html">志愿者网络评选</a></li>
+						</ul>
+					</li>
+				</ul>
+			</div>
+		</div>
+
+		<!-- 主页面 -->
+		<div class="g-content">
+			<div class="g-head">
+				<div class="u-show-hide-btn">
+					<img src="../public/images/nav-icon.png">
+				</div>
+				<p>志愿者网络评选</p>
+			</div>
+			<div class="article">
+				<!-- <div class="person">
+					<p>
+						<span class="name">胡龙丹</span>
+						<span class="age">35岁</span>
+					</p>
+					<p>武汉地铁志愿者服务总队</p>
+					<p>志愿宣言：志愿者就像蒲公英，播散文明的种子</p>
+					<img src="../public/images/best/v01.png">
+				</div>
+				<div class="content">
+					<p>志愿者用实际行动改变身边的人，一位小姑娘、自己的家人、上万名乘客，也许胡龙丹自己也没有想过——以后还会有多少人因为志愿者而选择不同的人生。</p>
+				</div> -->
+			</div>
+		</div>
+	</div>
+	<div class="g-bottom ui-border-t">
+		COPYRIGHT(©) 2016 武汉云智互联 版权所有
+	</div>
+
+	<script src="../public/lib/zepto.min.js"></script>
+	<script src="../public/lib/frozen.min.js"></script>
+	<script src="../public/js/leftnav.js"></script>
+	<script src="../public/lib/extend.js"></script>
+	<script src="../public/js/volunteer.js"></script>
+	<script>
+		(function(){
+			var para = utils.parseHash();
+			var index = para['id'];
+			var s = '<div class="person">'+
+					'<p>'+
+						'<span class="name">'+data[index]['name']+'</span>'+
+						'<span class="age">'+data[index]['age']+'岁</span>'+
+					'</p>'+
+					'<p>'+data[index]['organization']+'</p>'+
+					'<p>'+data[index]['slogan']+'</p>'+
+					'<img src="'+data[index]['bigImg']+'">'+
+				'</div>'+
+				'<div class="content">'+data[index]['deed']+'</div>';
+			$('.article').append(s);
+		})();
+	</script>
+</body>
+</html>

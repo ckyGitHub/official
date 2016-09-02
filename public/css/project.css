@@ -1,0 +1,29 @@
+.page-pro .introduce {
+	padding: 0.4rem 0.24rem;
+	font-size: 14px;
+	color: #666;
+	line-height: 28px;
+}
+.page-pro .line .item {
+	position: relative;
+	display: block;
+	padding: 0.5rem;
+}
+.page-pro .item img {
+	position: absolute;
+	top: 0.5rem;
+	left: 0.5rem;
+	width: 1rem;
+	height: 1rem;
+}
+.page-pro .text {
+	padding-left: 1.5rem;
+}
+.page-pro .text p:nth-child(1) {
+	color: #333;
+}
+.page-pro .text p:nth-child(2) {
+	margin-top: 0.4rem;
+	color: #808080;
+	font-size: 14px;
+}

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en" class="page-art">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<title>武汉云智互联科技有限公司官网</title>
+
+	<script src="../public/lib/flexible.js"></script>
+	<link rel="stylesheet" href="../public/lib/frozen.min.css">
+	<!-- build:css -->
+	<link rel="stylesheet" href="../public/css/common.css">
+	<link rel="stylesheet" href="../public/css/article.css">
+	<!-- endbuild -->
+</head>
+<body>
+	
+	<div class="g-wrapper">
+
+		<!-- 遮罩层 -->
+		<div class="g-cover"></div>
+
+		<!-- 左边菜单栏 -->
+		<div class="g-left-nav" data-show="0">
+			<div class="m-menu">
+				<ul class="menu">
+					<li class="ui-border-b"><a href="index.html">首页</a></li>
+					<li class="ui-border-b"><a href="project.html">项目</a></li>
+					<li class="ui-border-b"><a href="about.html">关于</a></li>
+					<li class="ui-border-b menu-active"><a href="news.html">新闻</a></li>
+					<li class="ui-border-b"><a href="#">案例</a>
+						<ul>
+							<li><a href="ex-community.html">云生活志愿服务站</a></li>
+							<li><a href="ex-city.html">荆门云生活</a></li>
+							<li><a href="ex-volunteer.html">志愿者网络评选</a></li>
+						</ul>
+					</li>
+				</ul>
+			</div>
+		</div>
+
+		<!-- 主页面 -->
+		<div class="g-content">
+			<div class="g-head">
+				<div class="u-show-hide-btn">
+					<img src="../public/images/nav-icon.png">
+				</div>
+				<p>新闻</p>
+			</div>
+			<div class="article">
+				<!-- <p class="title">武汉云智互联科技有限公司</p>
+				<p>武汉云智互联科技有限公司成立于2015年5月，是一家用心建设与运营智慧城市的互联网企业。</p>
+				<p>我们选取“社区”作为智慧城市的发力点，连接居民与政府、居民与商家，线上线下结合，构建智慧城市新生态。</p>
+				<p>我们以“公益”作为智慧城市的催化剂，助力城市文明创建，丰富居民精神文化生活，带动城市每个人投身智慧城市建设。</p>
+				<p>我们把“服务”作为智慧城市的集合点，整合教育、生活、公益服务，全面提升居民生活水平。</p>
+				<img src="../public/images/about.png"> -->
+			</div>
+		</div>
+	</div>
+	<div class="g-bottom ui-border-t">
+		COPYRIGHT(©) 2016 武汉云智互联 版权所有
+	</div>
+
+	<script src="../public/lib/zepto.min.js"></script>
+	<script src="../public/lib/frozen.min.js"></script>
+	<script src="../public/js/leftnav.js"></script>
+	<script src="../public/lib/extend.js"></script>
+	<script>
+		(function(){
+			var para = utils.parseHash();
+			$.get(" http://tw.cloudliving.net/official_website.php?c=Index&a=news&action=news_detail",{nid: para['id']},function(data){
+				if(data.Code != 0){$.tips({content: data.errorMessage + '请刷新重试'});return};
+				console.log(data);
+				var s = '<p class="title">'+data.result.news_title+'</p>'+
+					'<p style="margin-top:0;text-align:right;">'+data.result.create_time+'</p>'+data.result.news_content;
+				$('.article').append(s);
+			})
+		})();
+	</script>
+</body>
+</html>
